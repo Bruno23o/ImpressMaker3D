@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImpressMaker3D — Impressão 3D sob medida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#topo" class="brand">
+      <img src="assets/img/logo.jpg" alt="ImpressMaker3D" class="brand-mark">
+      <span class="brand-name">ImpressMaker<em>3D</em></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#produtos" class="nav-link">Produtos</a>
+      <a href="#processo" class="nav-link">Como funciona</a>
+      <a href="#duvidas" class="nav-link">Dúvidas</a>
+      <a href="#contato" class="nav-link">Contato</a>
+    </nav>
+
+    <button type="button" class="btn btn-ghost cart-trigger" id="cart-trigger" aria-label="Abrir carrinho">
+      Carrinho <span class="cart-count" id="cart-count">0</span>
+    </button>
+    <a href="#contato" class="btn btn-ghost nav-cta">Pedir orçamento</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="topo">
+  <div class="hero-inner">
+    <div class="hero-copy reveal">
+      <p class="hero-kicker">Impressão 3D por encomenda</p>
+      <h1>Seu projeto sai da tela e pousa na sua mesa.</h1>
+      <p class="hero-text">
+        A ImpressMaker3D transforma arquivos digitais em objetos reais: miniaturas, peças
+        de reposição, suportes, presentes e protótipos, impressos camada por camada com
+        o material certo para cada ideia.
+      </p>
+      <div class="hero-actions">
+        <a href="#produtos" class="btn btn-primary">Ver categorias</a>
+        <a href="#processo" class="btn btn-outline">Como funciona</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>0,1 mm</dt><dd>precisão de camada</dd></div>
+        <div><dt>+12</dt><dd>materiais disponíveis</dd></div>
+        <div><dt>48h</dt><dd>prazo médio de impressão</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="glow glow-purple"></div>
+      <div class="glow glow-green"></div>
+      <svg id="printer-rig" viewBox="0 0 360 460" xmlns="http://www.w3.org/2000/svg">
+        <line x1="90" y1="40" x2="270" y2="40" stroke="#5c4a86" stroke-width="4" stroke-linecap="round"/>
+        <line x1="90" y1="40" x2="90" y2="120" stroke="#5c4a86" stroke-width="4" stroke-linecap="round"/>
+        <line x1="270" y1="40" x2="270" y2="120" stroke="#5c4a86" stroke-width="4" stroke-linecap="round"/>
+        <g id="nozzle-head">
+          <rect x="150" y="30" width="60" height="34" rx="6" fill="#241a3d" stroke="#8d6fd6" stroke-width="2"/>
+          <polygon points="172,64 188,64 180,82" fill="#B6FF3B"/>
+        </g>
+        <polyline id="print-path" points="120,420 240,420 240,340 120,340 120,300 240,300"
+          fill="none" stroke="#57E0FF" stroke-width="2" stroke-dasharray="4 5" opacity="0.5"/>
+        <g id="printed-object" transform="translate(180,300)">
+          <polygon points="0,-90 34,-70 34,0 0,20 -34,0 -34,-70" fill="none" stroke="#9B3FF0" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="0" cy="-45" r="16" fill="none" stroke="#B6FF3B" stroke-width="3"/>
+        </g>
+        <ellipse cx="180" cy="428" rx="90" ry="10" fill="#160F26"/>
+      </svg>
+    </div>
+  </div>
+  <button class="scroll-cue" id="scroll-cue" aria-label="Rolar para baixo">
+    <span></span>
+  </button>
+</section>
+
+<!-- ===================== PRODUTOS ===================== -->
+<section class="section" id="produtos">
+  <div class="section-inner">
+    <h2 class="reveal">O que sai da nossa impressora</h2>
+    <p class="section-lead reveal">
+      Uma amostra do que já saiu da nossa impressora — de utilitários do dia a dia a peças
+      de decoração e presentes criativos.
+    </p>
+
+    <div class="product-grid">
+
+      <article class="product-card reveal" data-category="Gamer">
+        <div class="product-visual">
+          <div class="product-carousel" aria-label="Fotos do Suporte de controle PS5">
+            <div class="product-slides">
+              <img class="product-slide is-active" src="assets/img/products/suporte-controle-ps5.jpg" alt="Suporte de parede para controle de PS5 com os símbolos do PlayStation">
+              <img class="product-slide" src="assets/img/products/caneca-monster-dourada.jpg" alt="Suporte de mesa para controle PS5">
+              <img class="product-slide" src="assets/img/products/suportes-copa.jpg" alt="Suporte de controle PS5 em diferentes modelos">
+            </div>
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button>
+            <div class="carousel-dots" aria-label="Selecionar foto"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <h3>Suporte de controle PS5</h3>
+          <p>Suporte de parede com os símbolos do PlayStation vazados, pra guardar o controle sem deixar ele largado por aí.</p>
+          <button type="button" class="card-toggle" aria-expanded="false">Detalhes do material</button>
+          <div class="card-details">
+            <p>PLA em acabamento texturizado, com furos para fixação na parede. Cores sob consulta.</p>
+          </div>
+          <div class="product-purchase">
+            <strong>R$ 59,90</strong>
+            <button type="button" class="btn btn-primary add-to-cart" data-product-id="suporte-ps5" data-product-name="Suporte de controle PS5" data-product-price="59.90">Adicionar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-category="Decoracao">
+        <div class="product-visual">
+          <div class="product-carousel" aria-label="Fotos do Chaveiro de parede Porsche GT3">
+            <div class="product-slides">
+              <img class="product-slide is-active" src="assets/img/products/chaveiro-porsche-gt3.jpg" alt="Chaveiro de parede temático Porsche GT3, azul e preto, com dois ganchos ocupados">
+            </div>
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button>
+            <div class="carousel-dots" aria-label="Selecionar foto"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <h3>Chaveiro de parede Porsche GT3</h3>
+          <p>Traseira de Porsche GT3 em escala, com ganchos para chaves e detalhes pintados à mão.</p>
+          <button type="button" class="card-toggle" aria-expanded="false">Detalhes do material</button>
+          <div class="card-details">
+            <p>PLA multicolor com pintura de acabamento. Fixação por parafusos na parede, 5 ganchos para chaves.</p>
+          </div>
+          <div class="product-purchase">
+            <strong>R$ 89,90</strong>
+            <button type="button" class="btn btn-primary add-to-cart" data-product-id="chaveiro-porsche" data-product-name="Chaveiro de parede Porsche GT3" data-product-price="89.90">Adicionar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-category="Utilitarios">
+        <div class="product-visual">
+          <div class="product-carousel" aria-label="Fotos do Suporte para cuia e bomba">
+            <div class="product-slides">
+              <img class="product-slide is-active" src="assets/img/products/suporte-cuia-bomba.jpg" alt="Suporte verde para secar cuia e bomba de chimarrão">
+            </div>
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button>
+            <div class="carousel-dots" aria-label="Selecionar foto"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <h3>Suporte para cuia e bomba</h3>
+          <p>Base pra secar a cuia de cabeça pra baixo e apoiar a bomba, mantendo tudo organizado na cozinha.</p>
+          <button type="button" class="card-toggle" aria-expanded="false">Detalhes do material</button>
+          <div class="card-details">
+            <p>PLA resistente à umidade do dia a dia. Disponível em várias cores.</p>
+          </div>
+          <div class="product-purchase">
+            <strong>R$ 44,90</strong>
+            <button type="button" class="btn btn-primary add-to-cart" data-product-id="suporte-cuia" data-product-name="Suporte para cuia e bomba" data-product-price="44.90">Adicionar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-category="Miniaturas">
+        <div class="product-visual">
+          <div class="product-carousel" aria-label="Fotos dos Dinossauros de enfeite">
+            <div class="product-slides">
+              <img class="product-slide is-active" src="assets/img/products/dinossauro-enfeite.jpg" alt="Dinossauros de enfeite impressos em 3D, um dourado e um verde, com aspecto de esqueleto articulado">
+            </div>
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button>
+            <div class="carousel-dots" aria-label="Selecionar foto"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <h3>Dinossauros de enfeite</h3>
+          <p>Réplicas articuladas de dinossauro em estilo esqueleto, ótimas como peça decorativa ou presente criativo.</p>
+          <button type="button" class="card-toggle" aria-expanded="false">Detalhes do material</button>
+          <div class="card-details">
+            <p>PLA em acabamento metálico ou fosco, várias cores disponíveis. Tamanho médio de 25 a 35 cm.</p>
+          </div>
+          <div class="product-purchase">
+            <strong>R$ 74,90</strong>
+            <button type="button" class="btn btn-primary add-to-cart" data-product-id="dinossauros" data-product-name="Dinossauros de enfeite" data-product-price="74.90">Adicionar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-category="Decoracao">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos dos Troféus personalizados"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/trofeus-personalizados.jpg" alt="Troféus personalizados dourados impressos em 3D"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Troféus personalizados</h3><p>Troféus e peças comemorativas com acabamento metálico para celebrar grandes momentos.</p><div class="product-purchase"><strong>R$ 119,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="trofeus-personalizados" data-product-name="Troféus personalizados" data-product-price="119.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Presentes">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos dos chaveiros de cruz"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/chaveiros-cruz.jpg" alt="Chaveiros de cruz personalizados impressos em 3D"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Chaveiros de cruz</h3><p>Chaveiros religiosos personalizados, leves e resistentes para presentear.</p><div class="product-purchase"><strong>R$ 19,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="chaveiros-cruz" data-product-name="Chaveiros de cruz" data-product-price="19.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Presentes">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos do chaveiro taça"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/chaveiro-taca.jpg" alt="Chaveiro em formato de taça dourada"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Chaveiro taça</h3><p>Mini troféu em formato de chaveiro, uma lembrança criativa para torcedores e campeões.</p><div class="product-purchase"><strong>R$ 24,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="chaveiro-taca" data-product-name="Chaveiro taça" data-product-price="24.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Decoracao">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos do vaso espiral preto">        <div class="product-slides"><img class="product-slide is-active" src="assets/img/products/vaso-espiral-1.jpg" alt="Vaso preto com textura espiral impresso em 3D"><img class="product-slide" src="assets/img/products/vaso-espiral-2.jpg" alt="Vaso espiral preto em outro ângulo"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Vaso espiral preto</h3><p>Vaso decorativo com textura espiral e acabamento elegante para ambientes modernos.</p><div class="product-purchase"><strong>R$ 54,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="vaso-espiral-preto" data-product-name="Vaso espiral preto" data-product-price="54.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Utilitarios">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos do organizador personalizado"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/organizador-personalizado.jpg" alt="Organizador preto e dourado com nome personalizado"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Organizador personalizado</h3><p>Caixa organizadora com divisórias e espaço para personalizar com o nome que o cliente quiser.</p><div class="product-purchase"><strong>R$ 99,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="organizador-personalizado" data-product-name="Organizador personalizado" data-product-price="99.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Miniaturas">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos do troféu de copa"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/trofeu-copa.jpg" alt="Réplica dourada de troféu de copa impressa em 3D"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Réplica de troféu de copa</h3><p>Miniatura detalhada com acabamento dourado e base verde para colecionar ou presentear.</p><div class="product-purchase"><strong>R$ 64,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="trofeu-copa" data-product-name="Réplica de troféu de copa" data-product-price="64.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Utilitarios">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos da caneca Monster rosa"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/caneca-monster-rosa.jpg" alt="Caneca rosa personalizada com tema Monster impressa em 3D"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Caneca Monster rosa</h3><p>Caneca temática com espaço para lata, alça confortável e acabamento personalizado.</p><div class="product-purchase"><strong>R$ 69,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="caneca-monster-rosa" data-product-name="Caneca Monster rosa" data-product-price="69.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Utilitarios">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos da caneca Monster preta"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/caneca-monster-preta.jpg" alt="Caneca preta personalizada com tema Monster impressa em 3D"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Cinzeiro</h3><p>Cinzeiro compacto e resistente para manter o ambiente organizado.</p><div class="product-purchase"><strong>R$ 69,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="cinzeiro" data-product-name="Cinzeiro" data-product-price="69.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Utilitarios">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos do suporte para caneca e taça"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/suporte-caneca-taca.jpg" alt="Suporte preto para canecas e taças"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Organizador de figurinhas da Copa</h3><p>Organizador temático para guardar e exibir suas figurinhas da Copa.</p><div class="product-purchase"><strong>R$ 49,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="organizador-figurinhas-copa" data-product-name="Organizador de figurinhas da Copa" data-product-price="49.90">Adicionar</button></div></div>
+      </article>
+      <article class="product-card reveal" data-category="Gamer">
+        <div class="product-visual"><div class="product-carousel" aria-label="Fotos do suporte de energético Monster laranjado"><div class="product-slides"><img class="product-slide is-active" src="assets/img/products/suporte-controle-ps5-ambiente.jpg" alt="Suporte de energético Monster laranjado"></div><button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button><button type="button" class="carousel-arrow carousel-next" aria-label="Próxima foto">&#8250;</button><div class="carousel-dots" aria-label="Selecionar foto"></div></div></div>
+        <div class="product-body"><h3>Suporte de energético Monster laranjado</h3><p>Suporte personalizado para manter sua lata de energético Monster firme e acessível.</p><div class="product-purchase"><strong>R$ 59,90</strong><button type="button" class="btn btn-primary add-to-cart" data-product-id="suporte-energetico-monster" data-product-name="Suporte de energético Monster laranjado" data-product-price="59.90">Adicionar</button></div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESSO ===================== -->
+<section class="section section-alt" id="processo">
+  <div class="section-inner">
+    <h2 class="reveal">Do arquivo ao objeto em 4 etapas</h2>
+
+    <ol class="process-list">
+      <li class="process-step reveal">
+        <span class="step-index">01</span>
+        <div>
+          <h3>Envie o modelo ou a ideia</h3>
+          <p>Mande um arquivo 3D pronto ou descreva o que você precisa — a gente ajuda a desenhar.</p>
+        </div>
+      </li>
+      <li class="process-step reveal">
+        <span class="step-index">02</span>
+        <div>
+          <h3>Escolha material e cor</h3>
+          <p>PLA, PETG ou resina, na cor e no acabamento que combinam com o uso da peça.</p>
+        </div>
+      </li>
+      <li class="process-step reveal">
+        <span class="step-index">03</span>
+        <div>
+          <h3>Impressão camada por camada</h3>
+          <p>Acompanhe o andamento da impressão e receba fotos antes do envio.</p>
+        </div>
+      </li>
+      <li class="process-step reveal">
+        <span class="step-index">04</span>
+        <div>
+          <h3>Entrega na sua porta</h3>
+          <p>Peça revisada, embalada e enviada, com prazo médio combinado desde o orçamento.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== DÚVIDAS ===================== -->
+<section class="section" id="duvidas">
+  <div class="section-inner section-narrow">
+    <h2 class="reveal">Perguntas frequentes</h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="true">
+          Preciso ter um arquivo 3D pronto?
+        </button>
+        <div class="faq-answer">
+          <p>Não. Se você já tem um arquivo STL ou OBJ, ótimo — mas também modelamos a peça a partir de uma descrição, foto de referência ou desenho.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Qual o prazo de entrega?
+        </button>
+        <div class="faq-answer">
+          <p>Peças simples ficam prontas em até 48h de impressão. Projetos com modelagem própria ou peças grandes têm prazo combinado no orçamento.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Quais materiais vocês usam?
+        </button>
+        <div class="faq-answer">
+          <p>PLA e PETG para a maioria das peças, e resina para miniaturas e detalhes finos. Indicamos o material ideal conforme o uso da peça.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Vocês fazem peças grandes?
+        </button>
+        <div class="faq-answer">
+          <p>Sim, dentro do volume de impressão disponível. Para objetos maiores, dividimos o modelo em partes e montamos após a impressão.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTATO ===================== -->
+<section class="section section-alt" id="contato">
+  <div class="section-inner section-narrow">
+    <h2 class="reveal">Peça um orçamento</h2>
+    <p class="section-lead reveal">Conte o que você quer imprimir. Respondemos com uma estimativa de material, prazo e valor.</p>
+
+    <form id="contact-form" class="contact-form reveal" novalidate>
+      <div class="form-row">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required placeholder="Como podemos te chamar?">
+        <span class="field-error">Conta pra gente seu nome.</span>
+      </div>
+      <div class="form-row">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required placeholder="voce@email.com">
+        <span class="field-error">Digite um e-mail válido.</span>
+      </div>
+      <div class="form-row">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000" autocomplete="tel">
+        <span class="field-error">Digite seu número de telefone.</span>
+      </div>
+      <div class="form-row">
+        <label for="projeto">Descreva o que você quer imprimir</label>
+        <textarea id="projeto" name="projeto" rows="4" required placeholder="Tamanho aproximado, material, cor, referência..."></textarea>
+        <span class="field-error">Descreva rapidamente o projeto.</span>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar pelo WhatsApp</button>
+    </form>
+
+    <div class="contact-success" id="contact-success" hidden>
+      <h3>Pedido recebido.</h3>
+      <p>Sua mensagem já chegou até a ImpressMaker3D. Em breve entramos em contato com uma estimativa.</p>
+      <button type="button" class="btn btn-outline" id="contact-reset">Enviar outro pedido</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="#topo" class="brand brand-footer">
+      <img src="assets/img/logo.jpg" alt="ImpressMaker3D" class="brand-mark">
+      <span class="brand-name">ImpressMaker<em>3D</em></span>
+    </a>
+    <p class="footer-text">Impressão 3D sob medida, camada por camada.</p>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> ImpressMaker3D</p>
+  </div>
+</footer>
+
+<button type="button" class="to-top" id="to-top" aria-label="Voltar ao topo">&#8593;</button>
+<a class="whatsapp-button" href="https://wa.me/5554984332709?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20ImpressMaker3D." target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp">
+  <span aria-hidden="true">◉</span> WhatsApp
+</a>
+
+<div class="cart-overlay" id="cart-overlay" hidden>
+  <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <div class="cart-header">
+      <h2 id="cart-title">Seu carrinho</h2>
+      <button type="button" class="cart-close" id="cart-close" aria-label="Fechar carrinho">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty">
+      <p>Seu carrinho está vazio.</p>
+      <a href="#produtos" class="btn btn-outline" id="cart-see-products">Ver produtos</a>
+    </div>
+    <div class="cart-footer" id="cart-footer">
+      <div><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+      <button type="button" class="btn btn-primary" id="cart-checkout">Finalizar compra</button>
+    </div>
+  </aside>
+</div>
+
+<div class="checkout-overlay" id="checkout-overlay" hidden>
+  <section class="checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+    <div class="cart-header">
+      <h2 id="checkout-title">Finalizar compra</h2>
+      <button type="button" class="cart-close" id="checkout-close" aria-label="Fechar checkout">&times;</button>
+    </div>
+    <div class="checkout-steps" aria-label="Etapas da compra">
+      <span class="is-active" data-step-indicator="1">1 Pagamento</span>
+      <span data-step-indicator="2">2 Entrega</span>
+      <span data-step-indicator="3">3 Confirmação</span>
+    </div>
+    <form id="checkout-form" novalidate>
+      <div class="checkout-step is-active" data-step="1">
+        <h3>Forma de pagamento</h3>
+        <div class="form-row">
+          <label for="payment-method">Escolha uma opção</label>
+          <select id="payment-method" name="payment-method" required>
+            <option value="">Selecione</option>
+            <option value="cartao">Cartão de crédito</option>
+            <option value="pix">PIX</option>
+            <option value="boleto">Boleto bancário</option>
+          </select>
+        </div>
+        <div id="card-fields" hidden>
+          <div class="form-row">
+            <label for="card-number">Número do cartão</label>
+            <input type="text" id="card-number" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 0000">
+          </div>
+          <div class="checkout-fields">
+            <div class="form-row">
+              <label for="card-name">Nome no cartão</label>
+              <input type="text" id="card-name" autocomplete="off">
+            </div>
+            <div class="form-row">
+              <label for="card-expiry">Validade</label>
+              <input type="text" id="card-expiry" inputmode="numeric" autocomplete="off" placeholder="MM/AA">
+            </div>
+          </div>
+          <p class="checkout-note">Demonstração: os dados não são armazenados nem enviados.</p>
+        </div>
+        <button type="button" class="btn btn-primary checkout-next">Continuar para entrega</button>
+      </div>
+      <div class="checkout-step" data-step="2">
+        <h3>Dados de envio</h3>
+        <div class="checkout-fields">
+          <div class="form-row"><label for="shipping-cep">CEP</label><input type="text" id="shipping-cep" required inputmode="numeric" placeholder="00000-000"></div>
+          <div class="form-row"><label for="shipping-number">Número</label><input type="text" id="shipping-number" required></div>
+        </div>
+        <div class="form-row"><label for="shipping-address">Endereço</label><input type="text" id="shipping-address" required autocomplete="street-address"></div>
+        <div class="form-row"><label for="shipping-city">Cidade</label><input type="text" id="shipping-city" required autocomplete="address-level2"></div>
+        <div class="checkout-actions"><button type="button" class="btn btn-outline checkout-back">Voltar</button><button type="button" class="btn btn-primary checkout-next">Revisar pedido</button></div>
+      </div>
+      <div class="checkout-step" data-step="3">
+        <h3>Pedido pronto para confirmação</h3>
+        <div class="checkout-summary" id="checkout-summary"></div>
+        <p class="checkout-note">Ao confirmar, esta demonstração simula a aprovação do pagamento. Para pagamentos reais, conecte um gateway seguro ao projeto.</p>
+        <div class="checkout-actions"><button type="button" class="btn btn-outline checkout-back">Voltar</button><button type="submit" class="btn btn-primary">Confirmar pedido</button></div>
+      </div>
+      <div class="checkout-success" id="checkout-success" hidden>
+        <h3>Pedido confirmado!</h3>
+        <p>Pagamento aprovado na demonstração. Em breve entraremos em contato para combinar a produção e o envio.</p>
+        <button type="button" class="btn btn-outline" id="checkout-finish">Fechar</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
