@@ -38,7 +38,7 @@ no `index.html`.
 | 4 | Seções aparecem ao rolar a tela       | `scroll`        | classe + transição CSS   |
 | 5 | Detalhes do material do produto       | `click`         | `slideToggle`            |
 | 6 | Destaque do card ao passar o mouse    | `hover`         | classe + transição CSS   |
-| 7 | Carrinho e checkout demonstrativo    | `click`/`submit`| etapas de pagamento e entrega |
+| 7 | Compra pelo WhatsApp                | `click`         | abertura de conversa com o produto |
 | 8 | Acordeão de perguntas frequentes      | `click`         | `slideDown` / `slideUp`  |
 | 9 | Validação e envio do formulário       | `submit`        | `fadeOut` / `fadeIn`     |
 | 10| Botão "voltar ao topo"                | `scroll`/`click`| `fadeIn` / `fadeOut`     |
@@ -51,13 +51,13 @@ no `index.html`.
   enfeite. As fotos ficam em `assets/img/products/`.
 - Paleta de cores extraída da logo: roxo (`#9B3FF0`), verde neon
   (`#B6FF3B`), ciano (`#57E0FF`) sobre fundo escuro (`#0A0714`).
-- O carrinho mantém os produtos no `localStorage` do navegador e encaminha o
-  resumo do pedido para o formulário de orçamento.
+- Os botões dos produtos abrem o WhatsApp com o nome e o preço do produto
+  preenchidos na mensagem.
 - As galerias de produtos aceitam várias imagens dentro de `.product-slides`;
   ao adicionar uma segunda imagem, setas, indicadores e gesto de arrastar são
   ativados automaticamente.
 - As novas fotos enviadas foram cadastradas como produtos independentes na
-  vitrine e já podem ser adicionadas ao carrinho.
+  vitrine e já podem ser compradas pelo WhatsApp.
 - A vitrine reúne as duas variações do suporte de controle PS5 em um único
   produto com várias fotos, e os dois vasos espirais em um único produto.
 

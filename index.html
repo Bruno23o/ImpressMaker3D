@@ -25,9 +25,6 @@
       <a href="#contato" class="nav-link">Contato</a>
     </nav>
 
-    <button type="button" class="btn btn-ghost cart-trigger" id="cart-trigger" aria-label="Abrir carrinho">
-      Carrinho <span class="cart-count" id="cart-count">0</span>
-    </button>
     <a href="#contato" class="btn btn-ghost nav-cta">Pedir orçamento</a>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
@@ -376,91 +373,6 @@
 <a class="whatsapp-button" href="https://wa.me/5554984332709?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20ImpressMaker3D." target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp">
   <span aria-hidden="true">◉</span> WhatsApp
 </a>
-
-<div class="cart-overlay" id="cart-overlay" hidden>
-  <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
-    <div class="cart-header">
-      <h2 id="cart-title">Seu carrinho</h2>
-      <button type="button" class="cart-close" id="cart-close" aria-label="Fechar carrinho">&times;</button>
-    </div>
-    <div class="cart-items" id="cart-items"></div>
-    <div class="cart-empty" id="cart-empty">
-      <p>Seu carrinho está vazio.</p>
-      <a href="#produtos" class="btn btn-outline" id="cart-see-products">Ver produtos</a>
-    </div>
-    <div class="cart-footer" id="cart-footer">
-      <div><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
-      <button type="button" class="btn btn-primary" id="cart-checkout">Finalizar compra</button>
-    </div>
-  </aside>
-</div>
-
-<div class="checkout-overlay" id="checkout-overlay" hidden>
-  <section class="checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
-    <div class="cart-header">
-      <h2 id="checkout-title">Finalizar compra</h2>
-      <button type="button" class="cart-close" id="checkout-close" aria-label="Fechar checkout">&times;</button>
-    </div>
-    <div class="checkout-steps" aria-label="Etapas da compra">
-      <span class="is-active" data-step-indicator="1">1 Pagamento</span>
-      <span data-step-indicator="2">2 Entrega</span>
-      <span data-step-indicator="3">3 Confirmação</span>
-    </div>
-    <form id="checkout-form" novalidate>
-      <div class="checkout-step is-active" data-step="1">
-        <h3>Forma de pagamento</h3>
-        <div class="form-row">
-          <label for="payment-method">Escolha uma opção</label>
-          <select id="payment-method" name="payment-method" required>
-            <option value="">Selecione</option>
-            <option value="cartao">Cartão de crédito</option>
-            <option value="pix">PIX</option>
-            <option value="boleto">Boleto bancário</option>
-          </select>
-        </div>
-        <div id="card-fields" hidden>
-          <div class="form-row">
-            <label for="card-number">Número do cartão</label>
-            <input type="text" id="card-number" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 0000">
-          </div>
-          <div class="checkout-fields">
-            <div class="form-row">
-              <label for="card-name">Nome no cartão</label>
-              <input type="text" id="card-name" autocomplete="off">
-            </div>
-            <div class="form-row">
-              <label for="card-expiry">Validade</label>
-              <input type="text" id="card-expiry" inputmode="numeric" autocomplete="off" placeholder="MM/AA">
-            </div>
-          </div>
-          <p class="checkout-note">Demonstração: os dados não são armazenados nem enviados.</p>
-        </div>
-        <button type="button" class="btn btn-primary checkout-next">Continuar para entrega</button>
-      </div>
-      <div class="checkout-step" data-step="2">
-        <h3>Dados de envio</h3>
-        <div class="checkout-fields">
-          <div class="form-row"><label for="shipping-cep">CEP</label><input type="text" id="shipping-cep" required inputmode="numeric" placeholder="00000-000"></div>
-          <div class="form-row"><label for="shipping-number">Número</label><input type="text" id="shipping-number" required></div>
-        </div>
-        <div class="form-row"><label for="shipping-address">Endereço</label><input type="text" id="shipping-address" required autocomplete="street-address"></div>
-        <div class="form-row"><label for="shipping-city">Cidade</label><input type="text" id="shipping-city" required autocomplete="address-level2"></div>
-        <div class="checkout-actions"><button type="button" class="btn btn-outline checkout-back">Voltar</button><button type="button" class="btn btn-primary checkout-next">Revisar pedido</button></div>
-      </div>
-      <div class="checkout-step" data-step="3">
-        <h3>Pedido pronto para confirmação</h3>
-        <div class="checkout-summary" id="checkout-summary"></div>
-        <p class="checkout-note">Ao confirmar, esta demonstração simula a aprovação do pagamento. Para pagamentos reais, conecte um gateway seguro ao projeto.</p>
-        <div class="checkout-actions"><button type="button" class="btn btn-outline checkout-back">Voltar</button><button type="submit" class="btn btn-primary">Confirmar pedido</button></div>
-      </div>
-      <div class="checkout-success" id="checkout-success" hidden>
-        <h3>Pedido confirmado!</h3>
-        <p>Pagamento aprovado na demonstração. Em breve entraremos em contato para combinar a produção e o envio.</p>
-        <button type="button" class="btn btn-outline" id="checkout-finish">Fechar</button>
-      </div>
-    </form>
-  </section>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/script.js"></script>

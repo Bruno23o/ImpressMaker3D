@@ -145,143 +145,19 @@ $(function () {
   });
 
   /* ------------------------------------------------------
-     7) Carrinho de produtos
-     Evento: click | Estado: localStorage
+     7) Compra pelo WhatsApp
+     Evento: click | Ação: abrir conversa com o produto
      ------------------------------------------------------ */
-  var carrinho = JSON.parse(localStorage.getItem('impressmaker3d-cart') || '[]');
-  var $cartOverlay = $('#cart-overlay');
-  var $cartItems = $('#cart-items');
-  var $checkoutOverlay = $('#checkout-overlay');
-
-  function moeda(valor) {
-    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  }
-
-  function salvarCarrinho() {
-    localStorage.setItem('impressmaker3d-cart', JSON.stringify(carrinho));
-  }
-
-  function atualizarCarrinho() {
-    var quantidadeTotal = 0;
-    var valorTotal = 0;
-    $cartItems.empty();
-
-    carrinho.forEach(function (item) {
-      quantidadeTotal += item.quantity;
-      valorTotal += item.price * item.quantity;
-      $cartItems.append(
-        '<div class="cart-item" data-product-id="' + item.id + '">' +
-          '<div><p class="cart-item-name">' + item.name + '</p><span class="cart-item-price">' + moeda(item.price * item.quantity) + '</span></div>' +
-          '<div class="cart-item-controls">' +
-            '<button type="button" class="quantity-btn quantity-decrease" aria-label="Diminuir quantidade">−</button>' +
-            '<span>' + item.quantity + '</span>' +
-            '<button type="button" class="quantity-btn quantity-increase" aria-label="Aumentar quantidade">+</button>' +
-            '<button type="button" class="cart-remove">Remover</button>' +
-          '</div>' +
-        '</div>'
-      );
-    });
-
-    $('#cart-count').text(quantidadeTotal);
-    $('#cart-total').text(moeda(valorTotal));
-    $('#cart-empty').toggle(carrinho.length === 0);
-    $('#cart-footer').toggle(carrinho.length > 0);
-    salvarCarrinho();
-  }
-
-  $('.add-to-cart').on('click', function () {
+  $('.add-to-cart').each(function () {
+    $(this).text('Comprar pelo WhatsApp').removeClass('add-to-cart').addClass('buy-whatsapp');
+  });
+  $('.buy-whatsapp').on('click', function () {
     var $botao = $(this);
-    var id = $botao.data('product-id');
-    var item = carrinho.find(function (produto) { return produto.id === id; });
-    if (item) {
-      item.quantity += 1;
-    } else {
-      carrinho.push({
-        id: id,
-        name: $botao.data('product-name'),
-        price: Number($botao.data('product-price')),
-        quantity: 1
-      });
-    }
-    atualizarCarrinho();
-    $cartOverlay.removeAttr('hidden');
+    var mensagem = 'Olá, gostaria de comprar o produto "' +
+      $botao.data('product-name') + '" pelo valor de R$ ' +
+      Number($botao.data('product-price')).toFixed(2).replace('.', ',') + '.';
+    window.open('https://wa.me/5554984332709?text=' + encodeURIComponent(mensagem), '_blank', 'noopener,noreferrer');
   });
-
-  $('#cart-trigger').on('click', function () {
-    $cartOverlay.removeAttr('hidden');
-  });
-  $('#cart-close').on('click', function () {
-    $cartOverlay.attr('hidden', true);
-  });
-  $cartOverlay.on('click', function (e) {
-    if (e.target === this) $cartOverlay.attr('hidden', true);
-  });
-  $cartItems.on('click', '.quantity-btn, .cart-remove', function () {
-    var id = $(this).closest('.cart-item').data('product-id');
-    var item = carrinho.find(function (produto) { return produto.id === id; });
-    if ($(this).hasClass('cart-remove') || ($(this).hasClass('quantity-decrease') && item.quantity === 1)) {
-      carrinho = carrinho.filter(function (produto) { return produto.id !== id; });
-    } else {
-      item.quantity += $(this).hasClass('quantity-increase') ? 1 : -1;
-    }
-    atualizarCarrinho();
-  });
-  $('#cart-see-products').on('click', function () {
-    $cartOverlay.attr('hidden', true);
-  });
-  $('#cart-checkout').on('click', function () {
-    $cartOverlay.attr('hidden', true);
-    $('#checkout-form')[0].reset();
-    $('#checkout-form .has-error').removeClass('has-error');
-    $('#card-fields').prop('hidden', true);
-    $('#card-fields input').prop('required', false);
-    $('#checkout-success').attr('hidden', true);
-    $checkoutOverlay.removeAttr('hidden');
-    mostrarEtapaCheckout(1);
-  });
-  function mostrarEtapaCheckout(etapa) {
-    $('.checkout-step').removeClass('is-active');
-    $('.checkout-step[data-step="' + etapa + '"]').addClass('is-active');
-    $('[data-step-indicator]').removeClass('is-active');
-    $('[data-step-indicator="' + etapa + '"]').addClass('is-active');
-  }
-  $('#checkout-close').on('click', function () { $checkoutOverlay.attr('hidden', true); });
-  $checkoutOverlay.on('click', function (e) {
-    if (e.target === this) $checkoutOverlay.attr('hidden', true);
-  });
-  $('#payment-method').on('change', function () {
-    var cartao = $(this).val() === 'cartao';
-    $('#card-fields').prop('hidden', !cartao);
-    $('#card-fields input').prop('required', cartao);
-  });
-  $('.checkout-next').on('click', function () {
-    var $step = $(this).closest('.checkout-step');
-    var etapaAtual = Number($step.data('step'));
-    var valido = true;
-    $step.find('[required]:visible').each(function () {
-      var preenchido = $.trim($(this).val()).length > 0;
-      $(this).closest('.form-row').toggleClass('has-error', !preenchido);
-      if (!preenchido) valido = false;
-    });
-    if (!valido) return;
-    if (etapaAtual === 2) {
-      var resumo = carrinho.map(function (item) { return item.quantity + 'x ' + item.name; }).join('<br>');
-      $('#checkout-summary').html('<strong>Itens:</strong><br>' + resumo + '<br><br><strong>Total:</strong> ' + $('#cart-total').text() + '<br><br><strong>Entrega:</strong> ' + $('#shipping-address').val() + ', ' + $('#shipping-number').val() + ' - ' + $('#shipping-city').val());
-    }
-    mostrarEtapaCheckout(etapaAtual + 1);
-  });
-  $('.checkout-back').on('click', function () {
-    mostrarEtapaCheckout(Number($(this).closest('.checkout-step').data('step')) - 1);
-  });
-  $('#checkout-form').on('submit', function (e) {
-    e.preventDefault();
-    $('.checkout-step').removeClass('is-active');
-    $('#checkout-success').removeAttr('hidden');
-    carrinho = [];
-    atualizarCarrinho();
-  });
-  $('#checkout-finish').on('click', function () { $checkoutOverlay.attr('hidden', true); });
-  atualizarCarrinho();
 
 
   /* ------------------------------------------------------
