@@ -156,7 +156,7 @@ $(function () {
     var mensagem = 'Olá, gostaria de comprar o produto "' +
       $botao.data('product-name') + '" pelo valor de R$ ' +
       Number($botao.data('product-price')).toFixed(2).replace('.', ',') + '.';
-    window.open('https://wa.me/5554984332709?text=' + encodeURIComponent(mensagem), '_blank', 'noopener,noreferrer');
+    window.open('https://wa.me/5554991809072?text=' + encodeURIComponent(mensagem), '_blank', 'noopener,noreferrer');
   });
 
 
@@ -235,7 +235,7 @@ $(function () {
       'Telefone: ' + $('#telefone').val(),
       'Projeto: ' + $('#projeto').val()
     ].join('\n');
-    var whatsappUrl = 'https://wa.me/5554984332709?text=' + encodeURIComponent(mensagem);
+    var whatsappUrl = 'https://wa.me/5554991809072?text=' + encodeURIComponent(mensagem);
 
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   });
