@@ -1,0 +1,128 @@
+/* Estilos do painel de admin — não interfere no CSS do site público */
+
+.admin-body {
+    background: #0a0714;
+    color: #f0f0f5;
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: #14101f;
+    border-bottom: 1px solid #2a2438;
+}
+
+.admin-header h1 { font-size: 1.3rem; margin: 0; }
+
+.admin-header-actions { display: flex; align-items: center; gap: 1rem; font-size: .9rem; }
+
+.btn-sair, .btn-voltar {
+    color: #c9a8ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.admin-main { max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem; }
+
+.admin-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primario {
+    background: #9B3FF0;
+    color: #fff;
+    padding: .6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: .95rem;
+}
+
+.admin-sucesso {
+    background: #1e3a2a;
+    color: #7ee8a3;
+    padding: .7rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.admin-erro {
+    background: #3a1e1e;
+    color: #ff9b9b;
+    padding: .7rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.admin-vazio { color: #999; }
+
+.admin-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: #14101f;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-tabela th, .admin-tabela td {
+    padding: .8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #2a2438;
+    font-size: .9rem;
+}
+
+.admin-thumb {
+    width: 48px; height: 48px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.admin-sem-imagem { color: #777; font-size: .8rem; }
+
+.status-ativo { color: #7ee8a3; }
+.status-inativo { color: #999; }
+
+.admin-acoes { display: flex; gap: .8rem; align-items: center; }
+.admin-acoes a { color: #c9a8ff; text-decoration: none; }
+.btn-excluir {
+    background: none; border: none; color: #ff8a8a;
+    cursor: pointer; font-size: .9rem; padding: 0;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    background: #14101f;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.admin-form label { font-size: .85rem; color: #ccc; margin-top: .6rem; }
+.admin-form input[type="text"],
+.admin-form input[type="file"],
+.admin-form textarea {
+    background: #0a0714;
+    border: 1px solid #333;
+    color: #fff;
+    padding: .6rem;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.admin-checkbox { display: flex; align-items: center; gap: .5rem; flex-direction: row; }
+
+.admin-imagens-atuais { display: flex; gap: .6rem; margin-bottom: .6rem; flex-wrap: wrap; }
+.admin-imagens-atuais img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; }
+
+.admin-form .btn-primario { margin-top: 1rem; align-self: flex-start; }
